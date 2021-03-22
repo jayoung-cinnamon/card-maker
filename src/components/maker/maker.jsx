@@ -7,11 +7,11 @@ import Preview from '../preview/preview';
 import styles from './maker.module.css';
 import CardEditForm from '../card_edit_form/card_edit_form';
 
-const Maker = ({authService}) => {
+const Maker = ({FileInput, authService}) => {
   const [cards,setCards] = useState( {
     '1':{
       //key는 card의 id이고, value가 card object자체가 될것.
-      
+ 
         id:'1',
         name:'Ellie',
         company:'Samsung',
@@ -89,6 +89,7 @@ const Maker = ({authService}) => {
       <Header onLogout={onLogout}/>
       <div className={styles.container}>
         <Editor 
+            FileInput={FileInput}
             cards={cards} 
             addCard={createOrUpdateCard} 
             updateCard={createOrUpdateCard} 
