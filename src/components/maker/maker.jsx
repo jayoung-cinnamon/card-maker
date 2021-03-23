@@ -5,59 +5,35 @@ import Header from '../header/header';
 import Editor from '../editor/editor';
 import Preview from '../preview/preview';
 import styles from './maker.module.css';
-import CardEditForm from '../card_edit_form/card_edit_form';
 
-const Maker = ({FileInput, authService}) => {
-  const [cards,setCards] = useState( {
-    '1':{
-      //key는 card의 id이고, value가 card object자체가 될것.
- 
-        id:'1',
-        name:'Ellie',
-        company:'Samsung',
-        theme:'dark',
-        title:'software engineer',
-        email:'ellie@gmail.com',
-        message:'go for it',
-        fileName:'ellie',
-        fileURL:null
-      
-    },
-    '2':{
-      
-        id:'2',
-        name:'ja-young',
-        company:'nothing',
-        theme:'light',
-        title:'software engineer',
-        email:'jayoung@gmail.com',
-        message:'slow but steady',
-        fileName:'ja-young',
-        fileURL:null
-      
-    },
-    '3' : {
-      id:'3',
-      name:'ji-soo',
-      company:'weather',
-      theme:'colorful',
-      title:'predictor',
-      email:'jisoo@gmail.com',
-      message:'hi',
-      fileName:'ji-soo',
-      fileURL:null
-    }
-  });
-
+const Maker = ({FileInput, authService,cardRepository}) => {
   const history = useHistory();
+  const historyState = useHistory().state;
+  const [cards,setCards] = useState({});
+  const [userId,setUserId] = useState(historyState && historyState.id);
+
   const onLogout = ()=>{
     authService.logout();
 
   };
+  useEffect(()=>{
+    //mount되었을때, 사용자의 id가 변경이 될때 마다 사용
+    if(!userId){
+      return;
+    }
+    const stopSync = cardRepository.syncCards(userId,cards=>{
+      setCards(cards);
+    })
+    
+    return () => stopSync();
+
+  },[userId]);
 
   useEffect(()=>{
     authService.onAuthChange(user=>{
-      if(!user){
+      if(user){
+        setUserId(user.uid);
+      } else {
         history.push('/');
       }
     })
@@ -74,6 +50,7 @@ const Maker = ({FileInput, authService}) => {
     //이전 상태의 것을 배경으로 해서 값을 업데이트 할때
     //컴포넌트 안에 있는 스테이트를 이용해서 업데이트 할때는 스테이트가 오래된것일 수 도 있다.
     //setCards를 정의한 부분에서 콜백을 전달해서 쓰거나, 예전의 cards=>를 받아서 새로운 값으로 리턴한다.
+    cardRepository.saveCard(userId,card);
   }
 
   const deleteCard = (card) => {
@@ -81,7 +58,8 @@ const Maker = ({FileInput, authService}) => {
       const updated = {...cards};
       delete updated[card.id];
       return updated;
-    })
+    });
+    cardRepository.removeCard(userId,card);
   }
 
   return (
