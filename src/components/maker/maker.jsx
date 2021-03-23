@@ -27,7 +27,7 @@ const Maker = ({FileInput, authService,cardRepository}) => {
     
     return () => stopSync();
 
-  },[userId]);
+  },[userId,cardRepository]);
 
   useEffect(()=>{
     authService.onAuthChange(user=>{
@@ -37,7 +37,8 @@ const Maker = ({FileInput, authService,cardRepository}) => {
         history.push('/');
       }
     })
-  })
+  },[userId,authService]);
+  //내가 쓰는 데이터들이 업데이트 될때만 변경되도록 작성을 해주는 것이 좋다.
 
   const createOrUpdateCard = (card) => {
     setCards(cards=>{
