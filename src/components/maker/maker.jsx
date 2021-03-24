@@ -1,4 +1,4 @@
-import React, { useEffect,useState} from 'react';
+import React, { useCallback, useEffect,useState} from 'react';
 import { useHistory } from 'react-router';
 import Footer from '../footer/footer';
 import Header from '../header/header';
@@ -9,13 +9,20 @@ import styles from './maker.module.css';
 const Maker = ({FileInput, authService,cardRepository}) => {
   const history = useHistory();
   const historyState = useHistory().state;
+
+  const onLogout = useCallback(
+    ()=>{
+      authService.logout();
+    } ,[authService]
+    //주의점: useCallback은 컴포넌트가 업데이트 되어도 prop이 변경이 되거나
+    //state가 변경이 되어도 한번 만들어진 함수를 재사용한다는 뜻이다.
+    //authService가 변경이 되어도 예전에 사용된 authService를 사용한다는것.
+    // 따라서 변경될 값을 따로 지정해줘야함 [authService]
+  );
+
   const [cards,setCards] = useState({});
   const [userId,setUserId] = useState(historyState && historyState.id);
 
-  const onLogout = ()=>{
-    authService.logout();
-
-  };
   useEffect(()=>{
     //mount되었을때, 사용자의 id가 변경이 될때 마다 사용
     if(!userId){
