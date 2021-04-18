@@ -1,15 +1,18 @@
-@value makerShadow,makerBlack,makerWhite,makerColorful,makerWheat from '../../common/colors.css';
+@value makerPurple,makerShadow,makerBlack,makerWhite,makerColorful,makerWheat from '../../common/colors.css';
 
 .card{
+  border: 1px solid rgb(211, 210, 210);
   display:flex;
-  width: 100%;
+  width: 28em;
+  height: 16em;
   align-items: center;
   background-color: yellow;
   margin-bottom: 0.5em;
-  border-radius: 1em;
+  border-radius: 0.6em;
   padding: 0.2em 0;
   box-shadow: 6px 6px 8px 0 makerShadow;
   max-width: 30rem;
+  margin-bottom: 1em;
 }
 
 .card.dark{
@@ -27,10 +30,11 @@
 }
 
 .avatar{
-  width: 10em;
-  height: 10em;
+
+  width: 11em;
+  height: 11em;
   padding: 1em;
-  margin-right: 1em;
+  margin:1em;
   border-radius: 50%;
 }
 
@@ -39,16 +43,19 @@
 .title 
 .email 
 .message{
+  border: 1px solid red;
   margin: 0;
-  font-size: 0.8rem;
-  margin-bottom: 0.2em;
+  margin-bottom: 0.5em;
 }
 
 .name{
   font-size: 1.2rem;
+  font-weight: bold;
 }
 
 .company{
+  font-size: 1rem;
+
   margin-bottom: 1em;
 }
 
@@ -56,11 +63,16 @@
   content:'';
   display:block;
   width: 90%;
-  height: 2px;
-  background-color: makerWheat;
+  height: 0.2em;
+  background-color: makerPurple;
   transform: translateY(0.5em);
 }
 
 .info{
-  width: 100%;
+  width: 15em;
+}
+
+.info > p {
+  margin-top: 0.2em;
+  
 }

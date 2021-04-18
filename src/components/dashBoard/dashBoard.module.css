@@ -1,0 +1,153 @@
+@value mediaQuery from '../../common/size.css';
+@value makerLightYellow,makerWhite,makerBlue,makerPurple,makerGradient,makerGreen,makerBlack,makerLightGrey,makerGrey,makerWhite,makerYellow,makerBlue,makerLightYellow from '../../common/colors.css';
+
+.dashBoard {
+  width: 80em;
+  height: 100vh;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: makerWhite;
+}
+
+.container {
+  padding: 1em;
+  display: flex;
+  height: 100%;
+  flex: 1;
+  min-height: 0;
+  justify-content: center;
+  align-items: center;
+  background-color: makerBlue;
+  position:relative;
+  z-index: 10;
+
+}
+
+.leftContainer{
+  color:makerWhite;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 22em;
+  margin-right: 1em;
+}
+
+.index{
+
+  color:makerWhite;
+  margin-bottom: 1em;
+  width: 3em;
+  height: 3em;
+  text-align: center;
+  line-height:3.5em;
+}
+
+.index:hover{
+  color: makerBlack;
+  transition: 0.4s ease-in;
+}
+
+.rightContainer{
+  padding: 1em;
+  height: 100%;
+  width: 70em;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.makerContainer{
+  width: 40em;
+  height: 100%;
+  background-color: white;
+  margin-right: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  overflow-y:auto;
+}
+
+.editImage{
+  margin-top: 5em;
+  width: 20em;
+}
+
+.text{
+  font-size: 0.8em;
+  margin-bottom: 5em;
+}
+
+
+.previewContainer{
+  width: 40em;
+  height: 100%;
+  background-color: white;
+  margin-right: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.previewImage{
+  width: 25em;
+}
+
+.btn{
+  margin-bottom: 5em;
+  cursor: pointer;
+  border:none;
+  background-color: transparent;
+  width: 15em;
+  height: 2.5em;
+  border-radius: 0.5em;
+  z-index:999;
+  border:1px solid makerGrey;
+}
+
+.btn:hover {
+  background-color: makerLightYellow;
+  transition: 0.4s ease-in;
+}
+
+
+
+.editSecond{
+  display: none;
+}
+
+.editor{
+
+}
+
+@media screen and (max-width: mediaQuery) {
+
+
+
+  .editor{
+  
+   
+  }
+  .leftContainer{
+    
+  }
+  .rightContainer{
+    flex-direction: column;
+   
+  }
+
+  .makerContainer{
+   
+  }
+
+  .previewContainer{
+    
+  }
+ 
+}

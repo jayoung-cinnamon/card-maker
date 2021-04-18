@@ -1,0 +1,230 @@
+@value mediaQuery from '../../common/size.css';
+@value makerDarkGrey,makerPurple,makerGradient,makerGreen,makerBlack,makerLightGrey,makerGrey,makerWhite,makerYellow,makerBlue,makerLightYellow from '../../common/colors.css';
+
+.greeting{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: makerPurple;
+  color: makerDarkGrey;
+}
+
+.greeting.dark{
+  background-color: makerDarkGrey;
+  color:white;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+  flex: 1;
+  min-height: 0;
+}
+
+.leftContainer{
+  height: 100vh;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.rightContainer{
+  height: 100vh;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.greetingText{
+  margin: 0;
+  font-size: 5em;
+  font-weight: bold;
+}
+
+.subText{
+  margin: 0;
+  left: 0;
+  font-size: 0.9em;
+  margin-right: 7em;
+}
+
+.startBtn{
+  margin-top: 1em;
+  margin-right: 23em;
+  border:none;
+  background-color: makerLightYellow;
+  width: 10em;
+  height: 3em;
+  border-radius: 5em;
+  z-index:999;
+}
+
+.startBtn:hover{
+  cursor: pointer;
+  opacity: 0.7;
+  transition: 0.3s ease-in ;
+  z-index:999;
+}
+
+.imgContainer{
+  position:absolute; 
+  top: 0; 
+  left:0;
+  width: 100%;
+  height: 100%;
+  
+}
+
+.imgContainer img{
+  position: absolute;
+  width: 3em;
+  animation: float 3s infinite linear alternate;
+  
+}
+
+.confetti1{
+  top: 10em;
+  left: 10em;
+}
+
+.confetti2{
+  width: 2em;
+  top: 1em;
+  left: 30em;
+}
+
+.confetti3{
+  top: 35em;
+  left: 5em;
+}
+
+.confetti4{
+  top: 35em;
+  left: 20em;
+}
+
+.confetti5{
+  top: 20em;
+  left: 35em;
+}
+
+.confetti5{
+  top: 15em;
+  left: 35em;
+}
+
+.confetti6{
+  top: 10em;
+  left: 30em;
+}
+
+.confetti7{
+  top: 8em;
+  left: 20em;
+}
+
+.confetti8{
+  top: 5em;
+  left: 5em;
+}
+
+
+
+
+/* rightContainer */
+
+.cardImage{
+  width: 30em;
+  animation: float 2s infinite linear alternate;
+  z-index:10;
+}
+
+.shadow{
+  margin-top: 4em;
+  width: 19em;
+  height: 0.5em;
+  border-radius: 50%;
+  background-color: makerGrey;
+  filter: blur(0.7em);
+  z-index:10;
+
+}
+
+.box{
+  bottom: 0;
+  width: 25em;
+  height: 50%;
+  background-color: makerYellow;
+  background: makerGradient;
+  position: absolute;
+  border-radius: 40px 40px 0 0 ;
+}
+
+@keyframes float {
+  0% {
+    transform: rotateY(0) translateY(0);
+  }
+  100% {
+       transform: translateY(1rem); 
+  }
+}
+
+
+
+@media screen and (max-width: mediaQuery) {
+  .container {
+    flex-direction: column;
+  }
+  .leftContainer{
+    position: relative;
+    width: 100%;
+  }
+  .rightContainer{
+    width: 100%;
+  }
+
+  .greetingText{
+    font-size: 4em;
+    font-weight: bold;
+  }
+
+  .startBtn{
+    margin-top: 0.5em;
+    margin-right: 18em;
+    width: 9em;
+    height: 2em;
+    z-index: 10;
+  }
+
+
+  .cardImage{
+    margin-top: 0;
+    width: 22em;
+  }
+  
+  .imgContainer{
+    display: none;
+  }
+
+  .shadow{
+    margin-top: 2em;
+    width: 15em;
+    height: 0.4em;
+    border-radius: 50%;
+    background-color: makerGrey;
+    filter: blur(0.7em);
+  }
+  
+  .subText{
+    
+    font-size: 0.8em;
+    margin-right: 5em;
+  }
+}

@@ -1,12 +1,122 @@
-@value makerGreen, makerLightPink, makerWhite from '../../common/colors.css';
+@value mediaQuery from '../../common/size.css';
+@value makerLightGrey,makerDarkGrey,makerShadow,makerGrey,makerBlack,makerPurple,makerBlue,makerGreen, makerLightYellow, makerWhite from '../../common/colors.css';
 
 .login {
-  width: 30em;
+  width: 80em;
+  height: 100%;
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   background-color: makerWhite;
+  color:makerDarkGrey;
+  
+}
+
+.login.dark{
+  background-color: makerDarkGrey;
+  color:white;
+ 
+}
+
+.container.dark{
+  background-color: makerDarkGrey;
+  color:white;
+}
+
+.leftContainer.dark{
+  background-color: makerDarkGrey;
+  color:white;
+}
+
+.loginContainer.dark{
+  background-color: makerDarkGrey;
+  color:white;
+  box-shadow: none;
+  border:1px solid makerLightGrey;
+
+}
+
+.rightContainer.dark{
+  color:white;
+  background: rgb(34,34,34);
+  background: linear-gradient(90deg, rgba(34,34,34,0.34077380952380953) 30%, rgba(34,34,34,1) 100%);
+}
+
+.button.dark{
+  color:white;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+  flex: 1;
+  min-height: 0;
+  justify-content: center;
+  align-items: center;
+  background-color: makerBlue;
+  position:relative;
+
+}
+
+.leftContainer{
+  height: 100vh;
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.loginContainer{
+  box-shadow: 4px 7px 18px -4px #616161; 
+  padding: 3em;
+  width: 20em;
+  height: 30em;
+  background-color: makerWhite;
+  margin-bottom: 3em;
+  display: flex;
+  align-items: center;
+  border-radius: 0.5em;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.textContainer{
+  font-size: 2em;
+}
+
+.subTitle{
+  font-size: 1em;
+  font-weight: bold;
+
+}
+
+
+.subTitle:after {
+  content: "";
+  display: block;
+  border: 0.5px solid makerGrey;
+  margin: 2.5em ;
+}
+
+.subTitle2{
+  font-size: 0.7em;
+  font-weight: bold;
+}
+
+
+.rightContainer{
+  padding: 2em;
+  height: 100vh;
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: rgb(140,188,206);
+  background: linear-gradient(274deg, rgba(140,188,206,1) 0%, rgba(207,225,232,1) 100%, rgba(173,189,193,1) 100%);
+  
 }
 
 .list {
@@ -14,24 +124,117 @@
   display: flex;
   flex-direction: column;
   list-style: none;
-  padding: 0.5rem;
+  padding: 1rem;
 }
 
 .item {
   margin-bottom: 0.5em;
 }
 
-.button {
-  width: 100%;
-  height: 2.5em;
-  font-size: 1.2rem;
-  border-radius: 1.2rem;
-  background-color: transparent;
+
+.button{
   cursor: pointer;
-  border: 0.2rem solid makerGreen;
-  outline: 0;
+  border:none;
+  background-color: transparent;
+  width: 15em;
+  height: 2.5em;
+  border-radius: 0.5em;
+  z-index:999;
+  border:1px solid makerBlack;
 }
 
 .button:hover {
-  background-color: makerLightPink;
+  background-color: makerLightYellow;
+  transition: 0.4s ease-in;
+}
+
+.cardImage1{
+  width: 15em;
+  animation: rotate 3.5s infinite linear alternate;
+  z-index:10;
+}
+
+.cardImage2{
+  width: 15em;
+  animation: rotate 4.0s infinite linear alternate;
+  z-index:10;
+}
+
+.cardImage3{
+  width: 15em;
+  animation: rotate 4.5s infinite linear alternate;
+  z-index:10;
+}
+
+
+
+@keyframes rotate {
+  100% {
+    transform: rotateY( 180deg )
+
+  }
+}
+
+
+
+
+
+@media screen and (max-width: mediaQuery) {
+  
+  .container{
+    flex-direction: column;
+  }
+
+  .loginContainer{
+    width: 20em;
+    height: 20em;
+    margin-bottom: 0;
+    background-color: transparent;
+    box-shadow: none;
+  }
+  
+
+  .leftContainer{
+    width: 100%;
+    height: 50%;
+   
+  }
+
+  .rightContainer{
+    width: 100%;
+    height: 50%;
+    background: rgb(140,188,206);
+    background: linear-gradient(0deg, rgba(140,188,206,1) 0%, rgba(207,225,232,0) 100%, rgba(173,189,193,1) 100%);
+    
+  }
+
+  .rightContainer.dark{
+    background: rgb(34,34,34);
+    background: linear-gradient(180deg, rgba(34,34,34,0.34077380952380953) 30%, rgba(0,0,0,1) 100%, rgba(34,34,34,1) 100%);
+  }
+
+  .loginContainer.dark{
+    border: none;
+  }
+  
+  .subTitle:after {
+    width: 2.5em;
+    border: 1px solid makerGrey;
+    margin: 0.7em auto;
+  }
+  
+  .item {
+    margin-bottom: 0.3em;
+  }
+  .cardImage{
+    margin-top: 0;
+    width: 22em;
+  }
+
+  .cardImage1{
+    display: none;
+  }
+  .cardImage3{
+    display:none;
+  }
 }

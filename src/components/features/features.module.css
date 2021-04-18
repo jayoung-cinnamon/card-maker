@@ -1,0 +1,118 @@
+@value mediaQuery from '../../common/size.css';
+@value makerDarkGrey,makerWhite,makerYellow,makerBlue,makerLightYellow from '../../common/colors.css';
+
+.features{
+  height: 100vh;
+  background-color: makerBlue;
+  color: makerDarkGrey;
+}
+
+.features.dark{
+  background-color: makerDarkGrey;
+  color:white;
+}
+
+.container {
+  top:0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex: 1;
+  min-height: 0;
+}
+
+.leftContainer{
+  height: 100vh;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.macBook{
+  width: 100%;
+}
+
+
+
+.rightContainer{
+  position: sticky;
+  height: 100vh;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.featuresText{
+  margin-top: 2em;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  font-size: 5em;
+}
+
+.stepBox{
+  margin: 1em;
+  width: 25em;
+  overflow: hidden;
+  height: 300px;
+  max-height: 35vh;
+  border-radius: 10px;
+  display: flex;
+  flex: 1 1 1 0;
+}
+
+.stepBox > p {
+  margin-right: 1em;
+  margin-bottom: 1em;
+}
+
+.steps {
+  font-size: 1.5em;
+}
+
+@keyframes float {
+  0% {
+    transform: rotateY(0) translateY(0);
+  }
+  100% {
+       transform: translateY(1rem); 
+  }
+}
+
+
+
+
+@media screen and (max-width: mediaQuery) {
+  .container {
+    flex-direction: column-reverse;
+    
+  }
+  .leftContainer{
+    justify-content: center;
+    width: 100%;
+  }
+  .rightContainer{
+    width: 100%;
+  }
+
+  .featuresText{
+    width: 6em;
+    font-size: 4em;
+    margin-top: 0.3em;
+  }
+
+  .macBook{
+    width: 70%;
+  }
+
+  .stepBox{
+    flex-direction: column;
+  }  
+
+}

@@ -1,0 +1,13 @@
+.rightNav{
+  background-color: lightcoral;
+  width: 8em;
+}
+
+.rightNav > ul {
+  border:1px solid red;
+
+}
+
+.rightNav > ul >li {
+  border:1px solid green;
+}

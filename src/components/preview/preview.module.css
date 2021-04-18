@@ -1,4 +1,4 @@
-@value makerGreen from '../../common/colors.css';
+@value makerBlack,makerGreen from '../../common/colors.css';
 
 .preview {
   flex-basis: 50%;
@@ -6,10 +6,11 @@
 }
 
 .title {
+  font-weight: bold;
   width: 100%;
   text-align: center;
   margin-bottom: 1em;
-  color: makerGreen;
+  color: makerBlack;
 }
 
 .cards{

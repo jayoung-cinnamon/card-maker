@@ -1,8 +1,8 @@
-@value makerWhite,makerGreen from '../../common/colors.css';
+@value makerBlack,makerPurple,makerWhite,makerGreen from '../../common/colors.css';
 
 .button {
-  background-color: makerGreen;
-  color:makerWhite;
+  background-color: makerPurple;
+  color:makerBlack;
   font-weight: bold;
   cursor: pointer;
   padding: 0.5em;

@@ -1,0 +1,25 @@
+@value makerDarkGrey,makerPurple,makerGradient,makerGreen,makerBlack,makerLightGrey,makerGrey,makerWhite,makerYellow,makerBlue,makerLightYellow from '../../common/colors.css';
+
+.darkBtn{
+
+  font-weight: bold;
+  font-size: 0.7em;
+  right: 1em;
+  top: 1em;
+  border-radius: 0.2em;
+  border:0;
+  cursor: pointer;
+  margin-left: 1em;
+  height: 2.2em;
+  align-items: center;
+  cursor: pointer;
+  border:none;
+  
+  background: makerDarkGrey;
+  color: makerPurple;
+}
+
+.darkBtn.dark{
+  background-color: makerPurple;
+  color: makerDarkGrey;
+}

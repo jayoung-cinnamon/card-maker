@@ -1,0 +1,64 @@
+@value mediaQuery from '../../common/size.css';
+@value makerLightGrey,makerDarkWhite,makerWhite,makerYellow,makerBlue,makerLightYellow from '../../common/colors.css';
+
+p{
+  margin: 0;
+}
+
+.about{
+  height: 100vh;
+  background-color: makerLightGrey;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+  flex: 1;
+  min-height: 0;
+}
+
+.leftContainer{
+  height: 100vh;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.rightContainer{
+  height: 100vh;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.aboutText{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  font-size: 5em;
+  width: 5em;
+}
+
+@media screen and (max-width: mediaQuery) {
+  .container {
+    flex-direction: column;
+  }
+  .leftContainer{
+    justify-content: center;
+    width: 100%;
+  }
+  .rightContainer{
+    width: 100%;
+  }
+
+  .aboutText{
+    width: 6em;
+    font-size: 4em;
+  }
+
+
+}

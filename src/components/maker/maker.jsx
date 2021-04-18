@@ -6,17 +6,16 @@ import Editor from '../editor/editor';
 import Preview from '../preview/preview';
 import styles from './maker.module.css';
 
-const Maker = ({FileInput, authService,cardRepository}) => {
+const Maker = ({FileInput, authService,cardRepository,handleModeChange}) => {
   const history = useHistory();
   const historyState = useHistory().state;
 
   const onLogout = useCallback(
-    ()=>{
-      authService.logout();
-    } ,[authService]
-    //주의점: useCallback은 컴포넌트가 업데이트 되어도 prop이 변경이 되거나
-    //state가 변경이 되어도 한번 만들어진 함수를 재사용한다는 뜻이다.
-    //authService가 변경이 되어도 예전에 사용된 authService를 사용한다는것.
+    ()=>{authService.logout();
+      } ,[authService]
+    // 주의점: useCallback은 컴포넌트가 업데이트 되어도 prop이 변경이 되거나
+    // state가 변경이 되어도 한번 만들어진 함수를 재사용한다는 뜻이다.
+    // authService가 변경이 되어도 예전에 사용된 authService를 사용한다는것.
     // 따라서 변경될 값을 따로 지정해줘야함 [authService]
   );
 
@@ -72,7 +71,7 @@ const Maker = ({FileInput, authService,cardRepository}) => {
 
   return (
     <section className={styles.maker}>
-      <Header onLogout={onLogout}/>
+      <Header onLogout={onLogout} handleModeChange={handleModeChange}/>
       <div className={styles.container}>
         <Editor 
             FileInput={FileInput}

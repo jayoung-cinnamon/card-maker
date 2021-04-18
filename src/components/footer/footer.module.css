@@ -1,11 +1,31 @@
-@value makerWhite, makerGreen from '../../common/colors.css';
+@value mediaQuery from '../../common/size.css';
+@value makerGrey, makerWhite, makerGreen from '../../common/colors.css';
 
 .footer {
   width: 100%;
-  background-color: makerGreen;
+  height: 3em;
+  background-color: makerWhite;
   text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em;
+}
+
+.right{
+  font-size: 0.9em;
 }
 
 .title {
-  color: makerWhite;
+  font-weight: bold;
+  color: makerGrey;
+}
+
+
+@media screen and (max-width: mediaQuery) {
+  
+  .right{
+    font-size: 0.5em;
+  }
+
 }

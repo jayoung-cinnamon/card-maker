@@ -1,33 +1,108 @@
-@value makerGreen,makerWhite,makerBlack from '../../common/colors.css';
+@value mediaQuery from '../../common/size.css';
+@value makerGrey,makerYellow,makerGreen,makerWhite,makerBlack from '../../common/colors.css';
 
 .header{
   width: 100%;
+  height: 3em;
   text-align: center;
+  align-items: center;
   padding: 0.5em;
-  background-color: makerGreen;
-  position: relative;
+  background-color: makerWhite;
+  display: flex;
+  justify-content: space-between;
 }
 
-.logo{
-  width: 3em;
-
-}
 
 .title {
+  padding: 0.3em;
+  font-size: 1em;
   margin: 0;
-  color:makerWhite;
+  color:makerBlack;
 }
 
+
+
 .logout{
-  
-  position: absolute;
+  font-weight: bold;
+  font-size: 0.7em;
   right: 3em;
   top: 1em;
-  padding: 0.8em;
-  border-radius: 20%;
-  background-color: makerBlack;
-  color:makerWhite;
+  border-radius: 0.2em;
+  color:makerBlack;
   border:0;
   cursor: pointer;
+  margin-left: 1em;
+  height: 2.2em;
+  align-items: center;
+  background-color: makerGreen;
+}
+
+.login{
+
+  font-weight: bold;
+  font-size: 0.7em;
+  right: 3em;
+  top: 1em;
+  border-radius: 0.2em;
+  background-color: makerYellow;
+  color:makerBlack;
+  border:0;
+  cursor: pointer;
+  margin-left: 0.5em;
+  height: 2.2em;
+  align-items: center;
+}
+
+
+.logout:hover{
+  opacity: 0.6;
+}
+
+.hamburger{
+  display: none;
+}
+
+
+.rightContainer{
+
+  display: flex;
+  width: 20em;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu{
+  font-size: 0.8em;
+  padding: 0;
+  margin: 1em;
+  width: 20em;
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+}
+
+li{
+  cursor: pointer;
+}
+
+li:hover{
+  color:makerYellow;
+}
+
+
+@media screen and (max-width: mediaQuery) {
+  
+  .hamburger{
+   display: block;
+  }
+
+  .menu{
+    display: none;
+  }
+
+  .rightContainer{
+    width: 6em;
+  }
+
 
 }

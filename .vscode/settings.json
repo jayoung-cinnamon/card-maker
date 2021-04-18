@@ -5,5 +5,14 @@
   },
   "explorer.compactFolders": false,
   "vscode-pets.petColor": "black",
-  "editor.tabSize": 2
+  "editor.tabSize": 2,
+  "emmet.excludeLanguages": [
+
+
+    "markdown"
+  ]
+  "emmet.includeLanguages":{
+    "javascript":"javascriptreact"
+  }
+
   }
