@@ -3,12 +3,13 @@
 
 📍 개발 환경 :
 
-구현 언어: React,CSS Module
+  구현 언어: React,CSS Module
 
-사용 기술: JSON,Cloudinary, Firebase
+  사용 기술: JSON,Cloudinary, Firebase
 
-사용 툴 : Visual Studio Code, Figma
+  사용 툴 : Visual Studio Code, Figma
 
+---
 
 1. Main with DarkMode
 
