@@ -16,11 +16,25 @@
 
 1. Main with DarkMode
 
+![5eebcda8a53d3d6e926b81cab934df1f](https://user-images.githubusercontent.com/68357066/115511110-7591b700-a2bb-11eb-96a1-828f60ed2d33.gif)
+
+
 
 2. Login with firebase (google, github)
+
+![login](https://user-images.githubusercontent.com/68357066/115511781-357f0400-a2bc-11eb-987a-86055af792b7.gif)
+
 
 
 3. card-make/ edit /delete with cloudinary (you can save in cloudinary!)
 
+![create](https://user-images.githubusercontent.com/68357066/115512981-8511ff80-a2bd-11eb-8be1-f2ab52cb1ada.gif)
+
+
+![edit](https://user-images.githubusercontent.com/68357066/115512280-c7870c80-a2bc-11eb-95b9-05c37803faa9.gif)
+
 
 4. Responsive web with MediaQuery
+
+![responsive](https://user-images.githubusercontent.com/68357066/115513083-a5da5500-a2bd-11eb-904a-cadc93a1b609.gif)
+
