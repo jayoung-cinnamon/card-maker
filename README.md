@@ -11,6 +11,9 @@
 
 ---
 
+### function Component를 이용해 만든 명함메이커!
+### 손 쉽게 명함을 관리해 보세요!
+
 1. Main with DarkMode
 
 
